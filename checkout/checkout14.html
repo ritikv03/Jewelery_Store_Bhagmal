@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bhagmal Jewellers</title>
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <style>
+        .img{
+            float: left;
+        }
+        .data{
+            display: flex;
+            padding: 10%;
+            text-align: center;
+        }
+        button {
+          background-color: #800000;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          transition:0.5s;
+          max-width: 250px;
+        }
+        button:hover {
+          box-shadow: 10px 10px 5px rgba(0, 0, 0, 250)
+        }
+        .sort{
+          position: absolute;
+          left: 63%;
+        }
+    </style>
+
+    <script>
+      function check(){
+        alert(" Unavailable");
+      }
+    </script>
+
+  <!-- header section strats -->
+  <header class="header_section innerpage_header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="../index.html">
+          <span>
+            Bhagmal Jewellers
+          </span>
+        </a>
+        <div class="" id="">
+
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="../index.html">Home</a>
+                <a href="../shop.html">Shop</a>
+                <a href="../gold.html">Trends</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+
+    <div class="img">
+        <img src="../images/A14.png">
+    </div>
+
+    <div class="data">
+        <h2><b>EMERALD EARRINGS</b></h2>
+    </div>
+
+    <div class="sort">
+      <div class="btn-box">
+        <button onclick="check()">Check Store Availability</button>
+      </div>
+    </div>
+
+  <!-- js files -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/custom.js"></script>
+
+</body>
+
+</html>

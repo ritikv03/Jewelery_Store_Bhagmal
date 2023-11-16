@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Price Trends in India</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+  <style>
+    #goldPriceChart {
+      width: 1000px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+    .containerz {
+      text-align: center;
+      margin-top: 3%;
+      margin-bottom: 4%;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- header section strats -->
+  <header class="header_section innerpage_header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Bhagmal Jewellers
+          </span>
+        </a>
+        <div class="" id="">
+
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="gold.html">Trends</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+  <div class="containerz">
+    <h1>Price Trends in India</h1>
+
+    <canvas id="goldPriceChart"></canvas>
+
+    <script>
+      const goldData = {
+        labels: ["Jan-2023", "Feb-2023", "Mar-2023", "Apr-2023", "May-2023", "Jun-2023", "Jul-2023", "Aug-2023", "Sep-2023", "Oct-2023", "Nov-2023"],
+        datasets: [{
+          label: "22 Karat Gold (INR)",
+          data: [53500, 54200, 55000, 56200, 57500, 58000, 59000, 60000, 61000, 62000, 55380],
+          backgroundColor: "#ffd700",
+          borderColor: "#ffd700",
+          borderWidth: 2
+        }, {
+          label: "24 Karat Gold (INR)",
+          data: [58500, 59200, 60000, 61200, 62500, 63000, 64000, 65000, 66000, 67000, 60450],
+          backgroundColor: "#ffa500",
+          borderColor: "#ffa500",
+          borderWidth: 2
+        }]
+      };
+
+      const silverData = {
+        labels: ["Jan-2023", "Feb-2023", "Mar-2023", "Apr-2023", "May-2023", "Jun-2023", "Jul-2023", "Aug-2023", "Sep-2023", "Oct-2023", "Nov-2023"],
+        datasets: [{
+          label: "Silver (INR)",
+          data: [62500, 63200, 64000, 65200, 66500, 67000, 68000, 69000, 70000, 71000, 66450],
+          backgroundColor: "#0000FF",
+          borderColor: "#0000FF",
+          borderWidth: 2
+        }]
+      };
+
+      const mergedData = {
+        labels: goldData.labels,
+        datasets: [...goldData.datasets, ...silverData.datasets]
+      };
+
+      const options = {
+        title: {
+          display: true,
+          text: "Price Trends in India",
+          fontColor: "#333",
+          fontSize: 24,
+          fontWeight: "bold",
+          align: "center"
+        },
+        scales: {
+          xAxes: [{
+            ticks: {
+              autoSkip: false,
+              maxRotation: 45,
+              fontColor: "#666",
+              fontSize: 14
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              fontColor: "#666",
+              fontSize: 14
+            }
+          }]
+        },
+        legend: {
+          labels: {
+            fontColor: "#333",
+            fontSize: 16
+          },
+          align: "start"
+        },
+        annotation: {
+          type: "line",
+          yScaleID: "y-axis-0",
+          xValue: "2023-11-16",
+          borderColor: "#000",
+          borderWidth: 2,
+          label: {
+            content: "Current Price",
+            fontColor: "#000",
+            fontSize: 14,
+            position: "top"
+          }
+        }
+      };
+
+      const ctx = document.getElementById("goldPriceChart").getContext("2d");
+      const chart = new Chart(ctx, {
+        type: "line",
+        data: mergedData,
+        options: options
+      });
+    </script>
+  </div>
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row info_form_social_row">
+        <div class="col-md-8 col-lg-9">
+          <div class="info_form">
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row info_main_row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_links">
+            <h4>
+                Quick Links
+            </h4>
+            <div class="info_links_menu">
+              <a href="index.html">Home</a>
+              <a href="shop.html">Shop</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_insta">
+            <h4>
+              Payments
+            </h4>
+            <div class="insta_box">
+              <p> All kinds of payments are accepted here.
+            </div>
+            <div class="insta_box">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_detail">
+            <h4>
+              About Us
+            </h4>
+            <p class="mb-0">
+              At Bhagmal Jewellers, we craft stories of love and beauty in every jewel. Explore our world of handcrafted elegance, where each piece is a testament to your unique charm.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>
+            Contact Us
+          </h4>
+          <div class="info_contact">
+            <a href="https://maps.app.goo.gl/q8dPrAwBjiYtGus28">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Balachaur
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call +91 1234567890
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope"></i>
+              <span>
+                bhagmaljewel@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+         <span id="displayYear"></span> All Rights Reserved
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- js files -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>
+
+          
